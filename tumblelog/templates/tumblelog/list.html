@@ -1,0 +1,18 @@
+{% block title %}My Tumblelog{% endblock %}
+{% block primary %}
+	{% for object in object_list %}
+		{% ifequal object.content_type.name 'link' %}
+			<a href="{{object.url}}" title="{{object.title}}">{{obj.content_object.title}}</a>
+			{{object.content_object.description}} Posted on {{object.pub_date|date:"D d M Y"}}
+		{% endifequal %}
+		
+		{% ifequal object.content_type.name 'entry' %}
+			<h2>{{object.content_object.title}}</h2>
+			<p>{{object.pub_date}}</p>
+			{{ object.content_object.body_html|truncatewords_html:"20"|safe }}
+			<p><a href="{{object.content_object.get_absolute_url}}">more</a></p>
+		{% endifequal %}
+	{% endfor %}
+{% endblock %}
+			
+		

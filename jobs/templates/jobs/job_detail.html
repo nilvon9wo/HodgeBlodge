@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Job Detail{% endblock %}
+
+{% block content %}
+    <h1>Job Detail</h1>
+    
+    <div class="job">
+        <div class="title">
+            {{ object.job_title }}
+            -
+            {{ object.location }}
+        </div>
+        <div class="posted">
+            Posted: {{ object.pub_date|date:"d-M-Y" }}
+        </div>
+        <div class="description">
+            {{ object.job_description }}
+        </div>
+    </div>
+{% endblock %}

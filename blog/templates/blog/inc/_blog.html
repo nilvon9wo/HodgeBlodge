@@ -1,0 +1,7 @@
+<div id="object_{{object.id}}">
+	<h2>
+		<a href="{% url blog object.id %}">{{object.title}}</a>
+		<small>{{object.pub_date|timesince|upper}} ago</small>
+	</h2>
+	{{object.body_html|safe}}
+</div>

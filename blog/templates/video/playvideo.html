@@ -1,0 +1,16 @@
+{% if video %}
+	<div id="videoplayer">
+		<object type="application/x-shockwave-flash"
+			width="320" height="263" if="FlowPlayer" data="/showvideo/FlowPlayer.swf">
+			<param name="allowScriptAccess" value="sameDomain" />
+			<param name="movie" value="/showvideo/FlowPlayer.swf" />
+			<param name="quality" value="high" />
+			<param name="scale" value="noScale" />
+			<param name="wmode" value="transparent" />
+			<param name="flashvars" value="baseURL=/showvideo&videoFile=flv/{{video.flvfilename}}&autoPlay=false&bufferLength=5&loop=false&progressBarColor1=0xAAAAAA&progressBarColor2=0x555555&autoBuffering=false&splashImageFile=clicktoplay.jpg&hideControls=false" />
+			
+			<p>Dien Browser scheint kein Flash-Plugin installiert zu haben</p>
+		</object>
+		<div id="comment">{{video.comment}}</div>
+	</div>
+{% endif %}
