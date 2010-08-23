@@ -2,7 +2,7 @@
 from django.shortcuts import get_object_or_404
 from django.template import Context, loader
 from annoying.decorators import render_to
-from FluxHodgeBlodge.apps.flux.blog.models import Blog, Category
+from FluxHodgeBlodge.blog.models import Blog, Category
 
 @render_to('index.html')
 def index(request):

@@ -106,10 +106,10 @@ INSTALLED_APPS = (
     'tagging',
     
     #Flux apps
-    'FluxHodgeBlodge.apps.flux.blog',
-    'FluxHodgeBlodge.apps.flux.jobs',
-    'FluxHodgeBlodge.apps.flux.links',
-    'FluxHodgeBlodge.apps.flux.tumblelog',
+    'FluxHodgeBlodge.blog',
+    'FluxHodgeBlodge.jobs',
+    'FluxHodgeBlodge.links',
+    'FluxHodgeBlodge.tumblelog',
 )
 
 # SETTING FOR DEBUG TOOLBAR-----------------------------------------

@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from FluxHodgeBlodge.apps.flux.blog.models import Blog, ENTRY_STATUS_PUBLISHED
+from FluxHodgeBlodge.blog.models import Blog, ENTRY_STATUS_PUBLISHED
 from tagging.views import tagged_object_list
 
 dateless_dict={
@@ -27,16 +27,16 @@ urlpatterns = patterns('django.views.generic.date_based',
     ),
 
 )
-urlpatterns += patterns('FluxHodgeBlodge.apps.flux.blog.views',
+urlpatterns += patterns('FluxHodgeBlodge.blog.views',
     url (r'^view/(?P<slug>[^\.]+)', 'view_post', name='view_blog_post'),
     url (r'^category/(?P<slug>[^\.]+)', 'view_category', name='view_blog_category'),
 )
 
-urlpatterns += patterns('FluxHodgeBlodge.apps.flux.blog.tag_views',
+urlpatterns += patterns('FluxHodgeBlodge.blog.tag_views',
     #(r'^tags/$', 'tags'),
     url(r'tags/$', 'list_tags', name='tags'),
     #(r'^tag/(?P<tag>[-_A-Za-z0-9]+)/$', 'with_tag'),
-    (r'tag/(?P<slug>[-_A-Za-z0-9]+)/$', 'tag_detail'),
+    url(r'tag/(?P<slug>[-_A-Za-z0-9]+)/$', 'tag_detail', name='tag_detail'),
     (r'tag/(?P<object_id>[-_A-Za-z0-9]+)/page/(?P<page>d+)$', 'with_tag'),
 )
 

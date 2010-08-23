@@ -3,7 +3,7 @@
 	{% load tagging_tags %}
 	{% tags_for_object entry as tags %}
 	{% for tag in tags %}
-		<a href="{{url tag_detail tag.slug}}/">{{tag.name}}</a>
+		<a href="{{url tag_detail tag.slug}}">{{tag.name}}</a>
 	{% endfor %}
 </div><!--  tag-cloud end -->
 <p><em>View the <a href="{{url tags}}">whole tag cloud</a></em></p>

@@ -2,7 +2,7 @@
 from django.views.generic.list_detail import object_detail
 from annoying.decorators import render_to
 from tagging.models import Tag, TaggedItem
-from FluxHodgeBlodge.apps.flux.blog.models import Blog
+from FluxHodgeBlodge.blog.models import Blog
 
 def list_tags (request):
     qs = Tag.objects.all()

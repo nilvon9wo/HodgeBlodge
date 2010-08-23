@@ -1,5 +1,5 @@
 from django.contrib import admin
-from FluxHodgeBlodge.apps.flux.jobs.models import Job, Location
+from FluxHodgeBlodge.jobs.models import Job, Location
 
 class JobAdmin(admin.ModelAdmin):
     list_display = ("job_title", "location", "pub_date")

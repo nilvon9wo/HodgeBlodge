@@ -7,9 +7,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    (r'^blog/', include ('FluxHodgeBlodge.apps.flux.blog.urls')),
-    (r'^jobs/', include('FluxHodgeBlodge.apps.flux.jobs.urls')),
-    (r'^tumblelog/', include ('FluxHodgeBlodge.apps.flux.tumblelog.urls')),
+    (r'^blog/', include ('FluxHodgeBlodge.blog.urls')),
+    (r'^jobs/', include('FluxHodgeBlodge.jobs.urls')),
+    (r'^tumblelog/', include ('FluxHodgeBlodge.tumblelog.urls')),
 )
 
 urlpatterns += patterns('django.contrib.auth',

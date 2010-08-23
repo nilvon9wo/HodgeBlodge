@@ -5,7 +5,7 @@ import urllib
 import xml.etree.cElementTree as xml_parser
 from django.utils.encoding import smart_unicode
 
-from FluxHodgeBlodge.apps.flux.links.models import Link
+from FluxHodgeBlodge.links.models import Link
 
 class DeliciousClient(object):
     interval = 0
