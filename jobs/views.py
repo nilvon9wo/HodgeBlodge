@@ -1,15 +1,15 @@
 #from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render_to_response
 #from django.template import Context, loader
+from annoying.decorators import render_to
 from jobs.models import Job
 
 # Create your views here.
+@render_to('job_list.html')
 def index(request):
     object_list = Job.objects.order_by('-pub_date')[:10]
-    return render_to_response('job_list.html',
-                              {'object_list': object_list})
+    return {'object_list': object_list}
 
+@render_to('job_detail.html')
 def detail(request, job_id):
     job = get_object_or_404 (Job, pk=job_id)
-    return render_to_response('job_detail.html',
-                              {'job': job})
+    return {'job': job}

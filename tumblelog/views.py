@@ -1,9 +1,7 @@
 # Create your views here.
-from django.shortcuts import render_to_response
+from annoying.decorators import render_to
 from FluxHodgeBlodge.tumblelog.models import TumbleItem
 
+@render_to ('tumblelog/list.html')
 def tumbler(request):
-    context = {
-        'object_list' : TumbleItem.objects.all().order_by('-pub_date')
-    }
-    return render_to_response ('tumblelog/list.html', context)
+    return { 'object_list' : TumbleItem.objects.all().order_by('-pub_date') }
