@@ -88,6 +88,9 @@ TEMPLATE_DIRS = (
     rel ('resources','templates'),
 )
 
+
+#TEMPLATE_CONTEXT_PROCESSORS = ('FluxHodgeBlodge.apps.core.context.my_context',)
+
 INSTALLED_APPS = (
     #django apps
     'django.contrib.auth',
@@ -126,7 +129,7 @@ DEBUG_TOOLBAR_PANELS = (
 
 EXTRA_SIGNALS = True
 #HIDE_DJANGO_SQL = True
-#INTERCEPT_REDIRECTS = True
+INTERCEPT_REDIRECTS = False
 INTERNAL_IPS=('127.0.0.1',)
 SHOW_TEMPLATE_CONTEXT = True
 SHOW_TOOLBAR_CALLBACK = True

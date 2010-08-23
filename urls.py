@@ -12,6 +12,11 @@ urlpatterns = patterns('',
     (r'^tumblelog/', include ('FluxHodgeBlodge.tumblelog.urls')),
 )
 
+urlpatterns += patterns('django.contrib.auth',
+    (r'^accounts/login/$', 'views.login', {'template_name':'admin/login.html'}),
+    (r'^accounts/login/$', 'views.logout'),
+)
+
 if settings.DEBUG:
     urlpatterns +=patterns('',
         (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),

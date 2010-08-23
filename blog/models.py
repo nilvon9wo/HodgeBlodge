@@ -52,7 +52,7 @@ class Blog(models.Model):
         # Set the publication date for published items if it hasn't been set already
         if self.status == ENTRY_STATUS_PUBLISHED and not self.pub_date:
             self.pub_date = datetime.datetime.now()
-        return self.cleaned_data
+        #return self.cleaned_data
     
     def clean_status(self):
         status = self.cleaned_data.get('status')
