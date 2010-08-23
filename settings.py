@@ -1,15 +1,14 @@
 # Django settings for MicroBlog project.
 import os.path
-rel = lambda *x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+PROJECT_DIR = os.path.dirname(__file__)
+rel = lambda *x: os.path.join(os.path.abspath(PROJECT_DIR), *x)
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = DEBUG = True
 
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+MANAGERS = ADMINS = (
+    ('Brian Kessler', 'kessler.bm@gmail.com'),
+    ('Attila Forgacs', 'forgacs.attila@gmail.com'),
 )
-
-MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
@@ -45,6 +44,8 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+STATIC_DOC_ROOT = rel('static')
+
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = rel('media') # media subdirectory in the project directory
@@ -57,7 +58,7 @@ MEDIA_URL = '/resources/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '7+%rl6x5=^&540!8!=%#9vm!njv-8tj2_@+*lty(d=yu73w%jk'
@@ -108,7 +109,8 @@ INSTALLED_APPS = (
     'FluxHodgeBlodge.tumblelog',
 )
 
-INTERNAL_IPS=('127.0.0.1',)
+# SETTING FOR DEBUG TOOLBAR-----------------------------------------
+
 
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
@@ -122,9 +124,10 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.logger.LoggingPanel',
 )
 
-#INTERCEPT_REDIRECTS = True
-SHOW_TOOLBAR_CALLBACK = True
 EXTRA_SIGNALS = True
 #HIDE_DJANGO_SQL = True
+#INTERCEPT_REDIRECTS = True
+INTERNAL_IPS=('127.0.0.1',)
 SHOW_TEMPLATE_CONTEXT = True
+SHOW_TOOLBAR_CALLBACK = True
 TAG = True
