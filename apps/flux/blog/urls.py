@@ -34,7 +34,7 @@ urlpatterns += patterns('FluxHodgeBlodge.apps.flux.blog.views',
 
 urlpatterns += patterns('FluxHodgeBlodge.apps.flux.blog.tag_views',
     #(r'^tags/$', 'tags'),
-    (r'tags/$', 'list_tags'),
+    url(r'tags/$', 'list_tags', name='tags'),
     #(r'^tag/(?P<tag>[-_A-Za-z0-9]+)/$', 'with_tag'),
     (r'tag/(?P<slug>[-_A-Za-z0-9]+)/$', 'tag_detail'),
     (r'tag/(?P<object_id>[-_A-Za-z0-9]+)/page/(?P<page>d+)$', 'with_tag'),
