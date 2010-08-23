@@ -1,0 +1,10 @@
+<form action="/video/upload" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="relatedsubmission_id" values="{{submission.id}}" />
+	Video hochladen:<br/>(Nur AVI und FLV werden akzeptiert)
+	{{form.videoupload}} {{form.videoupload_file}}<br/>
+	
+	<label for="comment">Comment:</label>
+	<input type="text" id="comment" name="comment" style="width:100%" maxlength="250">
+	
+	<input type="submit" value="Hochladen" />
+</form>

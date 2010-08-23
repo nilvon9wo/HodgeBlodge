@@ -1,0 +1,54 @@
+{% load get_latest %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Flux Hodge Blodge: {%block pagetitle %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{MEDIA_URL}}/styles/style.css" type="text/css" media="screen, projection" />
+	{% block extrahead %}{% endblock %}
+</head>
+<body>
+	<div id="header">My Site</div>
+	<div id="nav">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/links">Links</a></li>
+			<li><a href="/about">About</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		{% block content %}
+			<div id="primary">
+				<h1>{% block title %}{% endblock %}</h1>
+				{% block primary %}{% endblock %}
+			</div>
+			<div id="secondary">
+				<h3>Recent Entries:</h3>
+				{% get_latest blog.Entry 5 as recent_posts %}
+				<ul class="archive">
+					{% for obj in recent_posts %}
+						<li>
+							<a href="{{obj.get_absolute_url}}" title="Permanent Link to {{obj.title}}">
+								{{obj.title}}
+							</a>
+						</li>
+					{% endfor %}			
+				</ul>
+			</div>
+			<div id="sidebar">
+				<h3>Recent Delicious Links</h3>
+				{% get_latest links.Link 5 as recent_links %}
+				<ul class="archive">
+					{% for obj in recent_links %}
+						<li>
+							<a href="{{obj.url}}" title="{{obj.title}}">{{obj.title}}</a>
+							{{obj.description}} Posted on {{obj.pub_date|date:"D d M Y"}}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endblock %}		
+</body>
+</html>

@@ -1,0 +1,8 @@
+API Key (OAuth consumer key)
+dj0yJmk9Sk1uTUxNd05uS3ZOJmQ9WVdrOVYyRmljV1J6Tm1zbWNHbzlNVGd3TXpBNE16STJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD1lOQ--
+Shared Secret
+40551e0b412bb8acabab0b5b0ccb661a611b1bd5
+Application ID
+Wabqds6k
+Application Domain
+www.nowhereatall.net
