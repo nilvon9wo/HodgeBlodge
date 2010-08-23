@@ -1,5 +1,5 @@
 from django.contrib import admin
-from FluxHodgeBlodge.links.models import Link
+from FluxHodgeBlodge.apps.flux.links.models import Link
 
 class LinkAdmin(admin.ModelAdmin):
     pass

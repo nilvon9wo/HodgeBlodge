@@ -1,5 +1,4 @@
-#from django.http import HttpResponse
-#from django.template import Context, loader
+from django.shortcuts import get_object_or_404
 from annoying.decorators import render_to
 from jobs.models import Job
 

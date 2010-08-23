@@ -6,8 +6,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.syndication.feeds import Feed
 from django.dispatch import dispatcher
 
-from FluxHodgeBlodge.blog.models import Blog, ENTRY_STATUS_DRAFT
-from FluxHodgeBlodge.links.models import Link
+from FluxHodgeBlodge.apps.flux.blog.models import Blog, ENTRY_STATUS_DRAFT
+from FluxHodgeBlodge.apps.flux.links.models import Link
 
 # Create your models here.
 class TumbleItem(models.Model):
