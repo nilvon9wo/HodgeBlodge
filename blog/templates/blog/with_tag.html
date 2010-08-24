@@ -4,7 +4,7 @@
 	{% if entries %}
 		{% for entry in entries %}
 			<div class="row-{% cycle odd, even %}">
-				<h2><a href="/blog/{{entry.slug}}/">{{entry.title}}</a></h2>
+				<h2><a href="{%url view_blog_post blog.slug%}">{{entry.title}}</a></h2>
 				<h3>{{entry.create_date|date:"jS F Y"}}</h3>
 				{{entry.precis|safe|linebreaks}}
 				{% if entry.content %}

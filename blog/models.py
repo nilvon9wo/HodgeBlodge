@@ -6,7 +6,9 @@ from django.core.exceptions import ValidationError
 #from django.contrib.sitemaps import Sitemap
 
 import datetime
+import gettext
 import markdown
+
 from tagging.fields import TagField
 from tagging.models import Tag
 
@@ -17,14 +19,14 @@ ENTRY_STATUS_PUBLISHED = 1
 # Create your models here.
 class Blog(models.Model):
     author = models.ForeignKey(User, related_name='blogs')
-    title = models.CharField(_('title'),max_length=255, unique=True)
+    title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(
         unique_for_date='create_date',
         help_text='Automatically built from title.',
         #prepopulate_from=('title',)
     )
-    body_html = models.TextField(_('body_html'),blank=True)
-    body_markdown = models.TextField(_('body_markdown')) # included cause trying to use Markdown
+    body_html = models.TextField(blank=True)
+    body_markdown = models.TextField() # included cause trying to use Markdown
     create_date = models.DateField('Date Created', default=datetime.datetime.now, editable=False)
     pub_date = models.DateTimeField ('Date Published', blank=True, null=True, editable=False)
     up_date = models.DateField('Date Updated', auto_now = True, editable=False)

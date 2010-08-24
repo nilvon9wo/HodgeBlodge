@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^blog/', include ('FluxHodgeBlodge.blog.urls')),
     (r'^jobs/', include('FluxHodgeBlodge.jobs.urls')),
+    # (r'^restview/', MyRestView.dispatch),
     (r'^tumblelog/', include ('FluxHodgeBlodge.tumblelog.urls')),
 )
 

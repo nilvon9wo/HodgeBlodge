@@ -1,4 +1,4 @@
-# Django settings for MicroBlog project.
+    # Django settings for MicroBlog project.
 import os.path
 PROJECT_DIR = os.path.dirname(__file__)
 rel = lambda *x: os.path.join(os.path.abspath(PROJECT_DIR), *x)

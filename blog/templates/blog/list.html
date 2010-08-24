@@ -8,7 +8,7 @@
 		{{object.body_html|truncatewords_html:"20"|safe}}
 		<p>tags: 
 			{% for tag in object.get_tags %}
-				<a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>
+				<a href="{%url tag_detail tag.slug%}">{{tag}}</a>
 			{% endfor %}
 		</p>
 		<p><a href="{{object.get_absolute_url}}">read more</a></p>

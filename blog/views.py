@@ -1,8 +1,16 @@
 # Create your views here.
 from django.shortcuts import get_object_or_404
 from django.template import Context, loader
+from django.views.generic import simple
 from annoying.decorators import render_to
 from FluxHodgeBlodge.blog.models import Blog, Category
+
+def article_detail(request, slug=None):
+    article = get_object_or_404(Article, slug=slug)
+    return simple.direct_to_template(request,
+        template="articles/articles_detail.html",
+        extra_context={'article': article}
+    )
 
 @render_to('index.html')
 def index(request):
